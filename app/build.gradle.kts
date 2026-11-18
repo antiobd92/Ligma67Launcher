@@ -1,4 +1,5 @@
 import java.io.File
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -97,6 +98,12 @@ val generateWindowAnims = tasks.register<GenerateWindowAnimsTask>("generateWindo
     outputDir.set(layout.buildDirectory.dir("generated/l67-window-anims/res"))
 }
 
+// Release signing key lives OUTSIDE the repo (never committed):
+// ~/Ligma67Keys/keystore.properties, or pass -Pligma67.keystore=/path/to/keystore.properties.
+// Without it, release builds fall back to the debug key so anyone can still build the project.
+val releaseKeystore: File = (findProperty("ligma67.keystore") as String?)?.let(::File)
+    ?: File(System.getProperty("user.home"), "Ligma67Keys/keystore.properties")
+
 android {
     namespace = "com.ligma67.launcher"
     compileSdk {
@@ -111,14 +118,25 @@ android {
         versionName = "1.0.0"
     }
 
+    signingConfigs {
+        if (releaseKeystore.exists()) {
+            val p = Properties().apply { releaseKeystore.inputStream().use { load(it) } }
+            create("release") {
+                storeFile = file(p.getProperty("storeFile"))
+                storePassword = p.getProperty("storePassword")
+                keyAlias = p.getProperty("keyAlias")
+                keyPassword = p.getProperty("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            // Signed with the debug key so the optimized build can be sideloaded directly.
             // Compose is MUCH smoother in release (R8 + no debuggable interpreter) — use it.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
         }
     }
     compileOptions {

@@ -5,7 +5,20 @@ animations that stay smooth even when you spam apps open and closed.
 
 Kotlin + Jetpack Compose · Android 8.0+ (API 26) · targets API 36 · ~1.9 MB release APK
 
-## Build & install
+## Download
+
+**[⬇ Download the latest APK](https://github.com/antiobd92/Ligma67Launcher/releases/latest)**
+
+Works on any phone running Android 8.0 or newer, from any brand and any CPU type.
+
+1. Open the link on your phone and download `Ligma67Launcher-vX.Y.Z.apk`.
+2. Open the file. If Android asks, allow your browser or file manager to **install unknown apps**.
+3. If Play Protect warns about an unknown app, tap **More details › Install anyway**. It warns
+   because the app isn't from the Play Store.
+4. Press Home and choose **Ligma67Launcher**, or open **Ligma67 Settings** and tap
+   **Set as default home app**. On Xiaomi, use Settings › Apps › Default apps › Home screen.
+
+## Build from source
 
 ```bash
 ./gradlew :app:assembleRelease
@@ -13,11 +26,10 @@ adb install -r app/build/outputs/apk/release/app-release.apk
 ```
 
 Use the **release** build. It's R8-optimized and ships a baseline profile, and Compose is several
-times smoother there than in debug. It's signed with the debug key so it installs directly.
+times smoother there than in debug. Release builds are signed with the key described in
+`~/Ligma67Keys/keystore.properties` (`storeFile`, `storePassword`, `keyAlias`, `keyPassword`), or
+`-Pligma67.keystore=<path>`. Without one, they fall back to the debug key, so anyone can build.
 Requires JDK 17+ (Android Studio's bundled JBR works).
-
-Then pick Ligma67 as your home app (Ligma67 Settings shows a button, or use Settings ›
-Apps › Default apps › Home app).
 
 ## What's in it
 
