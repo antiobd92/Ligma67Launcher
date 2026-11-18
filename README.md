@@ -1,7 +1,6 @@
 # Ligma67Launcher
 
-A Liquid Glass Android home screen with One UI Home Up–style, fully tunable app open/close
-animations that stay smooth even when you spam apps open and closed.
+li quýt gờ lats, ani ma xờn good bro
 
 Kotlin + Jetpack Compose · Android 8.0+ (API 26) · targets API 36 · ~1.9 MB release APK
 
@@ -9,7 +8,7 @@ Kotlin + Jetpack Compose · Android 8.0+ (API 26) · targets API 36 · ~1.9 MB r
 
 **[⬇ Download the latest APK](https://github.com/antiobd92/Ligma67Launcher/releases/latest)**
 
-Works on any phone running Android 8.0 or newer, from any brand and any CPU type.
+phone chạy androi = work bro haha
 
 1. Open the link on your phone and download `Ligma67Launcher-vX.Y.Z.apk`.
 2. Open the file. If Android asks, allow your browser or file manager to **install unknown apps**.
