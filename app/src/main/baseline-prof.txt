@@ -1,0 +1,5 @@
+# Ahead-of-time compile the launcher's hot paths on install so the very first open/close
+# animations are already JIT-free. Compose libraries ship their own profiles; these rules
+# cover our code.
+HSPLcom/ligma67/launcher/**->**(**)**
+Lcom/ligma67/launcher/**;

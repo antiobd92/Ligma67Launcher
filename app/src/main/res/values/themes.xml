@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Platform layer: overridden in values-v28 / v29 with newer window attributes. -->
+    <style name="Platform.Ligma67" parent="android:Theme.Material.NoActionBar" />
+
+    <style name="Theme.Ligma67" parent="Platform.Ligma67">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Home: draws over the live system wallpaper with a fully transparent window. -->
+    <style name="Theme.Ligma67.Home">
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="Theme.Ligma67.Settings" parent="Theme.Ligma67.Home" />
+</resources>

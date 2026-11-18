@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Window animations are looked up by name at runtime; never shrink them away. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@anim/l67_*,@interpolator/l67_*" />

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ligma67Launcher</string>
+    <string name="settings_label">Ligma67 Settings</string>
+    <string name="gesture_service_label">Ligma67 Gestures</string>
+    <string name="gesture_service_desc">Lets Ligma67Launcher lock the screen, open recents, notifications and quick settings from home-screen gestures, and notice which app you just left so the close animation can shrink into the right icon. It never reads screen content.</string>
+</resources>
